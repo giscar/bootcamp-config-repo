@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongo-prod:27017/customerdb
+
+logging:
+  level:
+    org.mongodb.driver: WARN
