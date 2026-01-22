@@ -1,0 +1,22 @@
+#comentado por pruebas para que omita las pruebas unitarias
+quarkus:
+  datasource:
+    db-kind: postgresql
+    reactive:
+      url: postgresql://localhost:5432/customerdb
+    username: customer
+    password: secret
+
+  hibernate-orm:
+    database:
+      generation: update
+    log:
+      sql: true
+
+  log:
+    console:
+      json: true
+
+mp:
+  metrics:
+    enabled: true
