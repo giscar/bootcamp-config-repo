@@ -1,0 +1,31 @@
+quarkus:
+  http:
+    port: 8080
+
+  # =========================
+  # OpenAPI / Swagger
+  # =========================
+  smallrye-openapi:
+    path: /openapi
+
+  swagger-ui:
+    always-include: true
+
+  # =========================
+  # Datasource Reactive
+  # =========================
+  datasource:
+    db-kind: postgresql
+    username: customer
+    password: secret
+    reactive:
+      url: postgresql://localhost:5432/customerdb
+
+  # =========================
+  # Hibernate Reactive
+  # =========================
+  hibernate-orm:
+    database:
+      generation: update
+    log:
+      sql: true
