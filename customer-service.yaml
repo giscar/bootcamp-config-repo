@@ -1,6 +1,0 @@
-spring:
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/bank
-      #uri: mongodb://admin:admin123@localhost:27017/bootcampbd?authSource=admin
-
