@@ -8,12 +8,22 @@ spring:
 
   cloud:
     config:
-      # IMPORTANTE: evita que el servicio muera si el config-server
+      # Evita que el servicio muera si el config-server
       # tarda unos segundos en estar disponible
       fail-fast: false
 
 server:
   port: 8080
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://discovery:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
 
 management:
   endpoints:
