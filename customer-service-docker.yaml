@@ -1,10 +1,26 @@
 spring:
+  application:
+    name: customer-service
+
   data:
     mongodb:
       uri: mongodb://admin:admin123@mongodb:27017/customerdb?authSource=admin
+
+  cloud:
+    config:
+      # IMPORTANTE: evita que el servicio muera si el config-server
+      # tarda unos segundos en estar disponible
+      fail-fast: false
+
+server:
+  port: 8080
 
 management:
   endpoints:
     web:
       exposure:
         include: health,info
+
+  endpoint:
+    health:
+      show-details: always
